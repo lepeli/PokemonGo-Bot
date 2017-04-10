@@ -99,7 +99,15 @@ docker run --name=bot1-pokego --rm -it -v $(pwd)/configs/auth.json:/usr/src/app/
 >```
 docker run --name=bot1-pokego --rm -it -v $(pwd)/configs:/usr/src/app/configs -v $(pwd)/web/:/usr/src/app/web/ pokemongo-bot
 ```
-
+If you want to use a proxy with docker 
+For https proxy:
+```
+docker run --name=bot1-pokego -e "https_proxy=https://PROXY_IP:PORT" --rm -it -v $(pwd)/configs:/usr/src/app/configs -v $(pwd)/web/:/usr/src/app/web/ pokemongo-bot
+```
+For http proxy:
+```
+docker run --name=bot1-pokego -e "http_proxy=http://PROXY_IP:PORT" --rm -it -v $(pwd)/configs:/usr/src/app/configs -v $(pwd)/web/:/usr/src/app/web/ pokemongo-bot
+```
 
 Run a second container provided with the OpenPoGoBotWeb view:
 
